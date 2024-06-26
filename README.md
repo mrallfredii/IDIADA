@@ -1,5 +1,5 @@
 ## Steps to Configure an Android Automitve Project with Android Studio
-Fisrt of all, tou gotta be using the programming language Java
+Fisrt of all, you gotta be using the programming language Java
 
 Made by Alfred Manuel M. with Applus IDIADA
 ![Logo](https://upload.wikimedia.org/wikipedia/commons/7/73/Applus%2B_IDIADA_Logo.svg)
