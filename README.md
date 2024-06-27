@@ -1,5 +1,5 @@
-## Steps to Configure an Android Automitve Project with Android Studio
-Fisrt of all, you gotta be using the programming language Java
+## Steps to Setup an Android Automitve Project with Android Studio
+First you gotta be using the programming language Java!
 
 Made by Alfred Manuel M. with Applus IDIADA
 
@@ -8,17 +8,24 @@ Made by Alfred Manuel M. with Applus IDIADA
 
 ---
 
+## Prerequisites
+I am using a Windows11 HP PC while creating this guide.
+
+### Android Studio
+Android Studio Jellyfish 2023.3.1
+
+### Google Account
+You also need to have a Google Account so that you can sign in on Google Play store in the emulator
+
 ## Initialize Project
 - Click File -> New -> New Project 
 - Choose Automotive from the Templates list, and then “No Activity” 
 - Click "Next"
+
 ![image](https://user-images.githubusercontent.com/31958950/205915770-a15da317-1e8a-4901-aa55-c73b1e1bc91d.png)
 
-- Give a name to your application, I named mine "Login"
-- The package name is com.example.login, but you can change it to com.companyName.nameOfYourApplication.
-
-foto de new project [name, pack, langiuage, minimum sdk]
-
+- Give a name to your application, I named mine "Login_Aws"
+- The package name is com.example.login_aws, but you can change it to com.companyName.nameOfYourApplication.
 - Make sure you have chosen the correct Minimum SDK. I used API XX: Android X.0 (XXX)
 
 ## Setup project
