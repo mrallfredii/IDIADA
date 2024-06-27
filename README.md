@@ -105,7 +105,52 @@ dependencies {
 
 Build file of your specific module (where you add your dependencies, signing configurations, build types, flavors, etc.)
 
+
+
+In the file libs.versions.toml is where is defiend the versions of these libraries:
+```
+[versions]
+agp = "8.4.2"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.9.0"
+constraintlayout = "2.1.4"
+carAppAutomotive = "1.7.0-alpha02"
+desugar = "2.0.4"
+amplifyAuthenticator = "1.2.0"
+retrofit = "2.9.0"
+retrofitConverterGson = "2.9.0"
+awsSdk = "2.57.0"
+
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+carAppAutomotive = { group = "androidx.car.app", name = "app-automotive", version.ref = "carAppAutomotive" }
+desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
+amplifyAuthenticator = { group = "com.amplifyframework.ui", name = "authenticator", version.ref = "amplifyAuthenticator" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofitConverterGson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitConverterGson" }
+awsAndroidSdkCore = { group = "com.amazonaws", name = "aws-android-sdk-core", version.ref = "awsSdk" }
+awsAndroidSdkCognitoIdentityProvider = { group = "com.amazonaws", name = "aws-android-sdk-cognitoidentityprovider", version.ref = "awsSdk" }
+awsAndroidSdkAuthUserpools = { group = "com.amazonaws", name = "aws-android-sdk-auth-userpools", version.ref = "awsSdk" }
+awsAndroidSdkAuthUi = { group = "com.amazonaws", name = "aws-android-sdk-auth-ui", version.ref = "awsSdk" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+
+```
+
 After changing the gradle file, you will be notified that you should sync since "Gralde files have changed since last project sync". Click “Sync now”
+
+---
 
 - Then you need Session, Screen and CarAppService - three main concepts of Android Automotive applications. Create three files in java/com.example.login_aws: HomeScreen.java, MyCarAppService.java, MyCarAppSession.java and paste the code below for doing a Hello World:
 
