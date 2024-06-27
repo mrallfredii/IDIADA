@@ -103,11 +103,10 @@ dependencies {
 }
 ```
 
-Build file of your specific module (where you add your dependencies, signing configurations, build types, flavors, etc.)
+This is a build file of your specific module (where you add your dependencies, signing configurations, build types, flavors, etc.)
 
 
-
-In the file libs.versions.toml is where is defiend the versions of these libraries:
+In the file libs.versions.toml is where is defiend the versions of these dependencies:
 ```
 [versions]
 agp = "8.4.2"
