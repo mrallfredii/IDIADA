@@ -44,19 +44,23 @@ Create a folder in automotive/res called xml, and add a new file automotive_app_
 </automotiveApp> 
 ```
 
+This add support for Android Auto to your templated app, CarAppService.
+
+---
+
 - Open the build.gradlle (Module: automotive) file and paste the code below
 
 ```
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.android.application)
 }
 
 android {
-    namespace = "com.example.login"
+    namespace = "com.example.login_aws"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.login"
+        applicationId = "com.example.login_aws"
         minSdk = 29
         targetSdk = 34
         versionCode = 1
@@ -68,13 +72,11 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
@@ -90,14 +92,22 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(libs.carAppAutomotive)
+    coreLibraryDesugaring(libs.desugar)
+    implementation(libs.amplifyAuthenticator)
+    implementation(libs.retrofit)
+    implementation(libs.awsAndroidSdkCore)
+    implementation(libs.awsAndroidSdkAuthUi)
+    implementation(libs.awsAndroidSdkAuthUserpools)
+    implementation(libs.awsAndroidSdkCognitoIdentityProvider)
+    implementation(libs.retrofitConverterGson)
 }
 ```
 
-Explicar aixo
+Build file of your specific module (where you add your dependencies, signing configurations, build types, flavors, etc.)
 
 After changing the gradle file, you will be notified that you should sync since "Gralde files have changed since last project sync". Click “Sync now”
 
-- Then you need Session, Screen and CarAppService - three main concepts of Android Automotive applications. Create three files in java/com-example.automotive_example: HomeScreen.kt, MyCarAppService.kt, MyCarAppSession.kt and paste the code below:
+- Then you need Session, Screen and CarAppService - three main concepts of Android Automotive applications. Create three files in java/com.example.login_aws: HomeScreen.java, MyCarAppService.java, MyCarAppSession.java and paste the code below for doing a Hello World:
 
 HomeScreen.java
 
