@@ -28,6 +28,8 @@ You also need to have a Google Account so that you can sign in on Google Play st
 - The package name is com.example.login_aws, but you can change it to com.companyName.nameOfYourApplication.
 - Make sure you have chosen the correct Minimum SDK. I used API 29: Android 10.0 (Q)
 
+![image](https://github.com/mrallfredii/IDIADA/blob/master/photos/New-project.png)
+
 ## Setup project
 
 Create a folder in automotive/res called xml, and add a new file automotive_app_desc.xml
