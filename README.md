@@ -48,7 +48,7 @@ This add support for Android Auto to your templated app, CarAppService.
 
 ---
 
-- Open the build.gradlle (Module: automotive) file and paste the code below
+- Open the build.gradlle.kts (Module: automotive) file and paste the code below
 
 ```
 plugins {
@@ -156,7 +156,7 @@ After changing the gradle file, you will be notified that you should sync since 
 HomeScreen.java
 
 ```
-package com.example.login;
+package com.example.login_aws;
 
 import androidx.car.app.CarContext;
 import androidx.car.app.Screen;
@@ -193,7 +193,7 @@ HomeScreen extends Screen and represents the UI displayed in the car app
 MyCarAppService.java
 
 ```
-package com.example.login;
+package com.example.login_aws;
 
 import android.content.pm.ApplicationInfo;
 import androidx.car.app.CarAppService;
@@ -225,7 +225,7 @@ MyCarAppService extends CarAppService and manages the lifecycle of the car app
 MyCarAppSession.java
 
 ```
-package com.example.login;
+package com.example.login_aws;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -257,6 +257,8 @@ MyCarAppSession extends Session and handles the creation of the initial screen.
 
 - In the documentation you can read more about why you need Screen, Session and CarAppService: https://developer.android.com/training/cars/apps#key-terms-concepts
 
+---
+
 - Open the automotive/src/main/AndroidManifest.xml file and paste in the code below
 
 ```
@@ -286,17 +288,7 @@ MyCarAppSession extends Session and handles the creation of the initial screen.
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Login">
-
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        >
 
         <service
             android:name=".MyCarAppService"
@@ -308,14 +300,21 @@ MyCarAppSession extends Session and handles the creation of the initial screen.
         </service>
 
         <activity
-            android:name="androidx.car.app.activity.CarAppActivity"
             android:exported="true"
             android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
+            android:name="androidx.car.app.activity.CarAppActivity"
             android:launchMode="singleTask"
-            android:label="MyCarApp">
+            android:label="IDIADA">
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data android:name="distractionOptimized" android:value="true" />
+
         </activity>
-
-
         <meta-data android:name="com.android.automotive"
             android:resource="@xml/automotive_app_desc"/>
         <meta-data
