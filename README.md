@@ -26,7 +26,7 @@ You also need to have a Google Account so that you can sign in on Google Play st
 
 - Give a name to your application, I named mine "Login_Aws"
 - The package name is com.example.login_aws, but you can change it to com.companyName.nameOfYourApplication.
-- Make sure you have chosen the correct Minimum SDK. I used API XX: Android X.0 (XXX)
+- Make sure you have chosen the correct Minimum SDK. I used API 29: Android 10.0 (Q)
 
 ## Setup project
 
